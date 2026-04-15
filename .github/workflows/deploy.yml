@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch: # 启用手动触发按钮
 
 jobs:
   deploy:
@@ -12,22 +12,30 @@ jobs:
       contents: write
       pages: write
       id-token: write
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: latest # 或你本地用的版本，如 8
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '24'
+          node-version: '24' # 这里改成了 24，满足 Next.js 要求
           cache: 'pnpm'
 
-      - run: pnpm install
-      - run: pnpm build
+      - name: Install dependencies
+        run: pnpm install
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Build project
+        run: pnpm build # 确保你的 package.json 里有 "build": "next build"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./out # 注意：Next.js 静态导出的目录通常是 ./out，不是 ./dist
