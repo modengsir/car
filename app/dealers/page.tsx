@@ -4,6 +4,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { DealerForm } from "@/components/dealers/dealer-form"
 import { Shield, TrendingUp, Wrench, Headphones, MapPin, Users } from "lucide-react"
 
+const dealerImage = "/car/images/dealer-shop.jpg"
+
 export const metadata = {
   title: "诚招合作 - AutoMod Pro",
   description: "面向全国改装店开放合作，共享优质产品与专业技术支持",
@@ -66,7 +68,7 @@ export default function DealersPage() {
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/dealer-shop.jpg"
+                  src={dealerImage}
                   alt="专业改装门店"
                   fill
                   className="object-cover"

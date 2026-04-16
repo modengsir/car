@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+const heroImage = "/car/images/hero-car.jpg"
+
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-card">
@@ -41,7 +43,7 @@ export function HeroSection() {
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg lg:aspect-[16/11]">
             <Image
-              src="/images/hero-car.jpg"
+              src={heroImage}
               alt="专业改装跑车展示"
               fill
               className="object-cover"

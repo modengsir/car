@@ -22,6 +22,8 @@ export const productCategories = [
   { id: "lighting", name: "灯光系统", icon: "lighting" },
 ]
 
+const withBasePath = (path: string) => `/car${path}`
+
 export interface Product {
   id: string
   name: string
@@ -40,7 +42,7 @@ export const products: Product[] = [
     brand: "BMW",
     category: "exhaust",
     price: 12800,
-    image: "/images/product-exhaust.jpg",
+    image: withBasePath("/images/product-exhaust.jpg"),
     description: "高流量钛合金排气，提升引擎声浪与动力输出，适配 BMW 3系/4系。",
     tags: ["BMW 3系", "BMW 4系", "钛合金"],
   },
@@ -50,7 +52,7 @@ export const products: Product[] = [
     brand: "Mercedes-Benz",
     category: "bodykit",
     price: 28800,
-    image: "/images/product-bodykit.jpg",
+    image: withBasePath("/images/product-bodykit.jpg"),
     description: "全碳纤维材质空力套件，含前唇、侧裙、后扩散器，提升下压力与视觉效果。",
     tags: ["Mercedes C级", "碳纤维", "空力"],
   },
@@ -60,7 +62,7 @@ export const products: Product[] = [
     brand: "Audi",
     category: "suspension",
     price: 8600,
-    image: "/images/product-suspension.jpg",
+    image: withBasePath("/images/product-suspension.jpg"),
     description: "32段阻尼可调绞牙避震，铝合金材质，适配 Audi A4/A5 全系。",
     tags: ["Audi A4", "Audi A5", "可调避震"],
   },
@@ -70,7 +72,7 @@ export const products: Product[] = [
     brand: "Porsche",
     category: "wheel",
     price: 6800,
-    image: "/images/product-wheel.jpg",
+    image: withBasePath("/images/product-wheel.jpg"),
     description: "单片锻造工艺，轻量化设计，哑光黑配机加工唇边，适配 Porsche 911。",
     tags: ["Porsche 911", "锻造", "20寸"],
   },
@@ -80,7 +82,7 @@ export const products: Product[] = [
     brand: "Toyota",
     category: "exhaust",
     price: 15800,
-    image: "/images/product-exhaust.jpg",
+    image: withBasePath("/images/product-exhaust.jpg"),
     description: "从头段到尾段全钛合金材质，大幅减轻重量，GR Supra 专属设计。",
     tags: ["GR Supra", "全段排气", "钛合金"],
   },
@@ -90,7 +92,7 @@ export const products: Product[] = [
     brand: "BMW",
     category: "bodykit",
     price: 38800,
-    image: "/images/product-bodykit.jpg",
+    image: withBasePath("/images/product-bodykit.jpg"),
     description: "FRP+碳纤维复合材质宽体套件，含宽体翼子板、前后包围，竞技风格。",
     tags: ["BMW M3", "宽体", "竞技"],
   },
@@ -100,7 +102,7 @@ export const products: Product[] = [
     brand: "Mercedes-Benz",
     category: "suspension",
     price: 18800,
-    image: "/images/product-suspension.jpg",
+    image: withBasePath("/images/product-suspension.jpg"),
     description: "全自动气动避震，APP远程控制车身高度，含气泵与储气罐全套。",
     tags: ["Mercedes C级", "气动", "APP控制"],
   },
@@ -110,7 +112,7 @@ export const products: Product[] = [
     brand: "Audi",
     category: "wheel",
     price: 8800,
-    image: "/images/product-wheel.jpg",
+    image: withBasePath("/images/product-wheel.jpg"),
     description: "三片式锻造结构，钛金螺栓固定，可定制颜色与偏距。",
     tags: ["Audi RS4", "三片式", "定制"],
   },
